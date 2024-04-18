@@ -1,0 +1,26 @@
+{% extends 'base.html' %} {% block content %}
+<div class=" container shadow-lg p-3 mb-5 bg-body-tertiary rounded">
+<form method="post" class="buttons">
+  <h3 class="h3">Join Community</h3>
+  <div class="mb-3">
+    <label class="form-label">Name </label>
+    <input
+      class="form-control"
+      type="text"
+      placeholder="Pick a name!"
+      name="name"
+      value="{{name}}"
+    />
+  </div>
+  <div class="join mb-3">
+    <input type="text" placeholder="Room Code" name="code" value="{{code}}" class="form-control-len" />
+    <button type="submit" name="join " class="btn btn-success">Join a Room</button>
+  </div>
+  <button type="submit" name="create" class=" btn btn-primary btn-lg">Create a Room</button>
+  {% if error %}
+  <ul>
+    <li>{{error}}</li>
+  </ul>
+  {% endif %}
+</form></div>
+{% endblock %}
